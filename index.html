@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E FE CPL Lead Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .form-section { margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 5px; }
+        .form-section h2 { margin-top: 0; color: #333; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        }
+        .radio-group, .checkbox-group { margin-bottom: 10px; }
+        .radio-group label, .checkbox-group label { display: inline; font-weight: normal; margin-right: 15px; }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background-color: #4cae4c; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Lead Submission Form</h1>
+    <p>Please fill out the form to submit your lead information to E FE CPL.</p>
+    
+    <form action="https://evolvetech-innovations.trackdrive.com/api/v1/leads" method="POST">
+        
+        <input type="hidden" name="lead_token" value="7807ee37fcc64e1ea7de4086ef459aa1">
+        <input type="hidden" name="traffic_source_id" value="1009">
+
+        <div class="form-section">
+            <h2>Contact Information</h2>
+            <label for="caller_id">Phone Number (Required):</label>
+            <input type="tel" id="caller_id" name="caller_id" placeholder="+17194451111" required>
+
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" placeholder="John">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Smith">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="first-and-last-name@gmail.com">
+            
+            <label for="dob">Date of Birth (YYYY-MM-DD):</label>
+            <input type="text" id="dob" name="dob" placeholder="1990-01-01">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="">Select Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            
+            <label for="marital_status">Marital Status:</label>
+            <select id="marital_status" name="marital_status">
+                <option value="">Select Marital Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="separated">Separated</option>
+                <option value="widowed">Widowed</option>
+            </select>
+        </div>
+
+        <div class="form-section">
+            <h2>Address</h2>
+            <label for="address">Address 1:</label>
+            <input type="text" id="address" name="address" placeholder="123 Fake Street">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Boulder">
+
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="">Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                </select>
+
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" placeholder="12345">
+        </div>
+        
+        <div class="form-section">
+            <h2>Additional Details</h2>
+            <label for="employment_status">Employment Status:</label>
+            <select id="employment_status" name="employment_status">
+                <option value="">Select Status</option>
+                <option value="employed">Employed</option>
+                <option value="self_employed">Self Employed</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="homemaker">Homemaker</option>
+                <option value="retired">Retired</option>
+                <option value="disabled">Disabled</option>
+                <option value="separated">Separated</option>
+            </select>
+
+            <label for="best_time_to_contact">Best Time to Contact:</label>
+            <select id="best_time_to_contact" name="best_time_to_contact">
+                <option value="">Select Time</option>
+                <option value="anytime">Anytime</option>
+                <option value="evening">Evening</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="morning">Morning</option>
+            </select>
+
+            <div class="checkbox-group">
+                <label for="tcpa_opt_in_checkbox">
+                    <input type="checkbox" id="tcpa_opt_in_checkbox" name="tcpa_opt_in" value="true">
+                    I agree to the TCPA language and consent to being contacted.
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Submit Lead</button>
+    </form>
+</div>
+
+</body>
+</html>
